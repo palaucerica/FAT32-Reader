@@ -1,0 +1,385 @@
+#include "head.h"
+
+void Fill_BPB()
+{
+	read(file,&boot,sizeof(struct BPB));
+	return;
+}
+
+short FindNextCluster(int cluster) //devuelvo el proximo cluster
+{
+	short clusterRes;
+	lseek(file,cluster*4,SEEK_CUR); //me paro en el cluster que estoy procesando
+	read(file,&clusterRes,sizeof(short)); //leo la pos del proximo cluster
+	return clusterRes;
+}
+
+void FillName(char* name,DirEntry dir) //lleno el nombre de las entradas largas
+{
+    //pos que hay que hacer esto?
+    if(dir.LongDirEntry.LDIR_Ord>=64) dir.LongDirEntry.LDIR_Ord-=64;
+
+	int i=0;
+	int k=0;
+	for(i;i<10;i+=2,k++)
+	{
+		//if(i%2==0) //porque cojo uno si y uno no
+		//{
+		    if(dir.LongDirEntry.LDIR_Name1[i]==255) return;
+		    //name[k]='a';
+			name[(dir.LongDirEntry.LDIR_Ord-1)*13+k]=dir.LongDirEntry.LDIR_Name1[i];
+
+        //}
+    }
+    //int j=i;
+    i=0;
+    for(i;i<12;i+=2,k++) //porque cojo uno si y uno no
+	{
+		//if(i%2==0)
+		//{
+		    if(dir.LongDirEntry.LDIR_Name2[i]==255) return;
+			name[(dir.LongDirEntry.LDIR_Ord-1)*13+(k)]=dir.LongDirEntry.LDIR_Name2[i];
+		//}
+    }
+    i=0;
+    for(i;i<4;i+=2,k++)
+	{
+		//if(i%2==0) //porque cojo uno si y uno no
+		//{
+		    if(dir.LongDirEntry.LDIR_Name3[i]==255) return;
+			name[(dir.LongDirEntry.LDIR_Ord-1)*13+(k)]=dir.LongDirEntry.LDIR_Name3[i];
+		//}
+    }
+
+	//return name;
+}
+
+unsigned int Make_Int(unsigned short hi,unsigned short lo)
+{
+	int hi1=hi;
+	int hi2=lo;
+	hi1=(hi1<<0x10)|hi2;
+	return hi1;
+}
+
+int SameChksum(char chksum,int primeraLarga)
+{
+	if(primeraLarga==1) //si es la primera entrada larga
+	{
+		myChksum=chksum;
+		return 1;
+	}
+	else
+	{
+		if(chksum!=myChksum) return -1;
+		return 1;
+	}
+}
+
+int CountOfLink(int clusterAux) //le paso el cluster donde empiezan todos los ficheros hijos
+{
+	//int clusterAux=Make_Int(result->data.ShortDirEntry.DIR_FstClusHI,result->data.ShortDirEntry.DIR_FstClusLO); //me da el num de cluster
+	int myIndex=((clusterAux-2) * boot.BPB_SecPerClus)*boot.BPB_BytsPerSec + FirstDataSector;
+	int pos=lseek(file,myIndex,SEEK_SET); //me paro en el proximo cluster
+	if(pos!=myIndex)
+		perror("Bateo con la lectura");
+	int countShort=0;
+	int countEntry=0;
+    MyEntry actEntry;
+
+    while(1)
+    {
+		read(file,&(actEntry.data),sizeof(union DirEntry)); //lleno la entrada
+		countEntry++;
+		if(actEntry.data.ShortDirEntry.DIR_Name[0]==0xE5)
+		{
+			continue; //el cluster esta vacio
+		}
+		if(actEntry.data.ShortDirEntry.DIR_Name[0]==0x00)
+		{
+			return countShort; //de aqui pa abajo no hay mas na
+		}
+		if(actEntry.data.LongDirEntry.LDIR_Attr!=ATTR_LONG_NAME)
+			countShort++;
+		if(countEntry==(boot.BPB_BytsPerSec*boot.BPB_SecPerClus)/32) //si llegue al final del cluster
+		{
+				//voy a cargar el proximo bloque
+				long FatPos=boot.BPB_RsvdSecCnt*boot.BPB_BytsPerSec; //calculo la pos en disco de la FAT
+				pos =  lseek(file,FatPos,SEEK_SET); //me paro en la FAT
+				if(pos!=FatPos)
+				 perror("Bateo");
+				clusterAux = FindNextCluster(clusterAux); //busco el proximo cluster
+				//preguntar si el cluster tiene problemas
+				if(clusterAux==FreeClust || clusterAux==WrongClust || clusterAux==RervClust || clusterAux==ResvClust1 || clusterAux==ResvClust2)
+				{
+					return countShort;
+				}
+				int index=((clusterAux-2) * boot.BPB_SecPerClus)*boot.BPB_BytsPerSec + FirstDataSector; //calculo la pos del prox cluster
+				lseek(file,index,SEEK_SET); //me paro en el proximo cluster
+				countEntry=0;
+				continue;
+		}
+	}
+	return countShort;
+}
+
+MyEntry* GiveMeDirEntry(char *path)
+{
+
+	struct MyEntry * r=(struct MyEntry*) malloc(sizeof(MyEntry));
+	long begin=FirstDataSector; //calculo la dir del primer sector de datos
+	long pos=lseek(file,begin,SEEK_SET); //me paro en el primer sector de datos
+	struct MyEntry result=*r;
+	if(pos!=begin)
+		perror("Bateo");
+
+    //para que no me de segmentation fault
+    char * Copy =malloc(255);
+    strcpy(Copy,path);
+
+	char* token=strtok(Copy,"/"); //guardo los tokens
+
+	if(token==NULL) //pregunto si es el root
+	{
+		//tengo que llenarlo a mano
+		strcpy(result.data.ShortDirEntry.DIR_Name,"DIR-ROOT");
+		result.data.ShortDirEntry.DIR_Attr = ATTR_DIRECTORY;
+	    result.data.ShortDirEntry.DIR_NTRes = 0;
+	   	result.data.ShortDirEntry.DIR_CrtTime = 0;
+	   	result.data.ShortDirEntry.DIR_CrtTimeTenth = 0;
+	   	result.data.ShortDirEntry.DIR_CrtDate = 0;
+	   	result.data.ShortDirEntry.DIR_FstClusHI = 0;
+    	result.data.ShortDirEntry.DIR_FstClusLO = boot.BPB_RootClus;
+		free(Copy); //libero copy
+	    return r;
+	}
+	currentCluster=2;
+	//int p=2; //primer cluster de datos
+	int count=0; //cantidad de entradas de directorios
+	char nombre[255];
+	memset(nombre,0,255);
+
+	 //nombre del directorio
+	while(token!=NULL) //mientras pueda coger tokens
+	{
+		read(file,&(result.data),sizeof(union DirEntry)); //lleno la entrada de directorio
+		count++;
+
+		if(result.data.ShortDirEntry.DIR_Name[0]==0xE5)
+		{
+			continue; //el cluster esta vacio
+		}
+		if(result.data.ShortDirEntry.DIR_Name[0]==0x00)
+		{
+			return NULL; //de aqui pa abajo no hay mas na
+		}
+		while(result.data.LongDirEntry.LDIR_Attr == ATTR_LONG_NAME) //mientras que sea una entrada larga
+		{
+			if(SameChksum(result.data.LongDirEntry.LDIR_Chksum,count+1)!=1) //verifico si tienen el mismo chksum
+				perror("Bateo con el chksum");
+
+			FillName(nombre,result.data); //guardo los pedazos de nombre de la entrada larga
+
+			if(count==(boot.BPB_BytsPerSec*boot.BPB_SecPerClus)/32) //si llegue al final del cluster
+			{
+				//voy a cargar el proximo bloque
+				long FatPos=boot.BPB_RsvdSecCnt*boot.BPB_BytsPerSec; //calculo la pos en disco de la FAT
+				pos =  lseek(file,FatPos,SEEK_SET); //me paro en la FAT
+				if(pos!=FatPos)
+				 perror("Bateo");
+				currentCluster = FindNextCluster(currentCluster); //busco el proximo cluster
+				//preguntar si el cluster tiene problemas
+				if(currentCluster==FreeClust || currentCluster==WrongClust || currentCluster==RervClust || currentCluster==ResvClust1 || currentCluster==ResvClust2)
+				{
+					perror("Cluster con bateo");
+				}
+				int index=((currentCluster-2) * boot.BPB_SecPerClus)*boot.BPB_BytsPerSec + FirstDataSector; //calculo la pos del prox cluster
+				lseek(file,index,SEEK_SET); //me paro en el proximo cluster
+				count=0;
+				continue;
+			}
+			memset(&(result.data),0,sizeof(union DirEntry)); //pongo en cero pa na
+			read(file,&(result.data),sizeof(union DirEntry)); //lleno la entrada de directorio
+			count++; //procese una entrada larga mas
+		}
+		//preguntar si es .. o .
+		//no tiene larga
+
+		//es una entrada corta
+		if(strcmp(nombre,token)!=0) //comparo si el nombre que tengo es igual al del token
+		{
+			//seguir buscando
+			continue;
+		}
+		else
+		{
+			//guardo la parte alta y la baja
+			currentCluster = Make_Int(result.data.ShortDirEntry.DIR_FstClusHI,result.data.ShortDirEntry.DIR_FstClusLO); //me da el num de cluster
+			lseek(file,((currentCluster-2) * boot.BPB_SecPerClus)*boot.BPB_BytsPerSec + FirstDataSector,SEEK_SET); //me paro en el proximo cluster
+			//cojo el proximo token
+			token=strtok(NULL,"/");
+		}
+
+	}
+	return r;
+}
+
+time_t myMktime(short time,short date)
+{
+	struct tm * t;
+	t= malloc(sizeof(struct tm));
+	memset(t,0,sizeof(struct tm));
+
+	t->tm_sec=((((uint8_t *) &(time))[0] & 0x1f) * 2);
+	t->tm_min=((((((uint8_t *) &(time))[1]&0x7) << 3) + (((uint8_t *) &(time))[0] >> 5)));
+	t->tm_hour=(((uint8_t *) &(time))[1] >> 3);
+	t->tm_mday=(((uint8_t *) &(date))[0] & 0x1f);
+	t->tm_mon=((((((uint8_t *) &(date))[1]&0x1) << 3) + (((uint8_t *) &(date))[0] >> 5)))-1;
+	t->tm_year=(( ((uint8_t *) &(date))[1] >> 1) + 80);
+	t->tm_gmtoff = 0;
+	t->tm_isdst = -1;
+ 	return mktime(t);
+}
+
+int FillStatStruct(MyEntry * entry,struct stat *stbuf)
+{
+	memset(stbuf,0,sizeof(struct stat)); //lleno stat con ceros para que no malinterprete nada
+	short n=((entry->data.ShortDirEntry.DIR_Attr) & (ATTR_DIRECTORY|ATTR_VOLUME_ID)); //es para saber si es un directorio o un volumen
+	if(n==ATTR_DIRECTORY)
+	{
+		//es un directiorio
+		int clus=Make_Int(entry->data.ShortDirEntry.DIR_FstClusHI,entry->data.ShortDirEntry.DIR_FstClusHI); //busco la pos del cluster donde esta la inf de los ficheros hijos
+		stbuf->st_nlink=CountOfLink(clus); //la cantidad de enlaces fuertes
+		stbuf->st_mode=S_IFDIR; //el modo=>es un directorio
+	}
+	else
+	{
+		if(n==0) //pregunto si es un fichero=> no directorio y no volumen
+		{
+			stbuf->st_nlink=1; //tiene un solo enlace duro
+			stbuf->st_mode=S_IFREG;
+		}
+	}
+
+	stbuf->st_size = entry->data.ShortDirEntry.DIR_FileSize;
+	stbuf->st_atime = myMktime(0,entry->data.ShortDirEntry.DIR_LstAccDate);
+	stbuf->st_mtime = myMktime(entry->data.ShortDirEntry.DIR_WrtTime, entry->data.ShortDirEntry.DIR_WrtDate);
+	stbuf->st_ctime = myMktime(entry->data.ShortDirEntry.DIR_CrtTime, entry->data.ShortDirEntry.DIR_CrtDate);
+	stbuf->st_ino = Make_Int(entry->data.ShortDirEntry.DIR_FstClusHI,entry->data.ShortDirEntry.DIR_FstClusLO);
+
+	return 0;
+}
+
+static int fat_getattr(const char *path, struct stat *stbuf)
+{
+	MyEntry * actEntry =GiveMeDirEntry(path); //busco la entrada de directorio
+	if(actEntry==NULL) perror("Bateo con la entrada de directorio");
+
+    return FillStatStruct(actEntry,stbuf);
+}
+
+static int fat_readdir(const char *path, void *buf, fuse_fill_dir_t filler,off_t offset, struct fuse_file_info *fi)
+{
+	MyEntry * entry=GiveMeDirEntry(path);
+	if(entry==NULL) perror("Bateo con la entrada de directorio");
+
+	char nombre[255];
+	int count=0;
+
+	while(1)
+	{
+		if(entry->data.ShortDirEntry.DIR_Name[0]==0xE5)
+		{
+			continue; //el cluster esta vacio
+		}
+		if(entry->data.ShortDirEntry.DIR_Name[0]==0x00)
+		{
+			return 0; //de aqui pa abajo no hay mas na
+		}
+
+		while(entry->data.LongDirEntry.LDIR_Attr == ATTR_LONG_NAME) //mientras que sea una entrada larga
+		{
+			if(SameChksum(entry->data.LongDirEntry.LDIR_Chksum,count+1)!=1) //verifico si tienen el mismo chksum
+				perror("Bateo con el chksum");
+
+			FillName(nombre,entry->data); //guardo los pedazos de nombre de la entrada larga
+
+			if(count==(boot.BPB_BytsPerSec*boot.BPB_SecPerClus)/32) //si llegue al final del cluster
+			{
+				//voy a cargar el proximo bloque
+				long FatPos=boot.BPB_RsvdSecCnt*boot.BPB_BytsPerSec; //calculo la pos en disco de la FAT
+				int pos =  lseek(file,FatPos,SEEK_SET); //me paro en la FAT
+				if(pos!=FatPos)
+				 perror("Bateo");
+				currentCluster = FindNextCluster(currentCluster); //busco el proximo cluster
+				//preguntar si el cluster tiene problemas
+				if(currentCluster==FreeClust || currentCluster==WrongClust || currentCluster==RervClust || currentCluster==ResvClust1 || currentCluster==ResvClust2)
+				{
+					return 0;
+				}
+				int index=((currentCluster-2) * boot.BPB_SecPerClus)*boot.BPB_BytsPerSec + FirstDataSector; //calculo la pos del prox cluster
+				lseek(file,index,SEEK_SET); //me paro en el proximo cluster
+				count=0;
+				continue;
+			}
+			memset(&(entry->data),0,sizeof(union DirEntry)); //pongo en cero pa na
+			read(file,&(entry->data),sizeof(union DirEntry)); //lleno la entrada de directorio
+			count++; //procese una entrada larga mas
+		}
+		if(strcmp(entry->data.ShortDirEntry.DIR_Name,".          ")==0 || strcmp(entry->data.ShortDirEntry.DIR_Name,"..         ")==0)
+			filler(buf,entry->data.ShortDirEntry.DIR_Name,NULL,0);
+
+		//es una entrada corta voy a copiar a filler
+		filler(buf,nombre,NULL,0);
+
+	}
+    return 0;
+}
+
+static int fat_read(const char *path, char *buf, size_t size, off_t offset,
+                      struct fuse_file_info *fi)
+{
+
+    return 0;
+}
+
+static int fat_open(const char *path, struct fuse_file_info *fi)
+{
+
+    return 0;
+}
+
+static struct fuse_operations fat_oper = {
+    .getattr	= fat_getattr,
+    .readdir	= fat_readdir,
+    .open	= fat_open,
+    .read	= fat_read,
+};
+
+void T (char* a, char* b)
+{
+    int i=0;
+    for(i; i<3; i++)
+    {
+        a[i]=b[i];
+        }
+    }
+
+int main(int argc, char *argv[])
+{
+
+	file=open("/home/pedro/Documentos/prueba",O_RDWR); //abro el fichero
+	Fill_BPB(); //lleno la estructura BPB
+	FirstDataSector=(boot.BPB_RsvdSecCnt+(boot.BPB_NumFATs*boot.BPB_FATSz32))*boot.BPB_BytsPerSec;
+	myChksum=0;
+	GiveMeDirEntry("/pp/pp1");
+    //char a[4];
+    //char b[4]={'a','b','c','d'};
+    //T(a,b);
+    //printf("%s",a);
+	printf("pincho \n");
+	printf("seguro");
+	return 2;
+    //return fuse_main(argc, argv, &fat_oper);
+}
+

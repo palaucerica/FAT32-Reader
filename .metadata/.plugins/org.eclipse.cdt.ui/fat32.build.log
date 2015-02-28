@@ -1,0 +1,55 @@
+
+**** Build of configuration Debug for project fat32 ****
+
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o"main.o" "../main.c"
+../main.c: In function ‘Fill_BPB’:
+../main.c:5: warning: implicit declaration of function ‘read’
+../main.c: In function ‘FindNextCluster’:
+../main.c:12: warning: implicit declaration of function ‘lseek’
+../main.c: In function ‘FillName’:
+../main.c:29: warning: statement with no effect
+../main.c:35: warning: statement with no effect
+../main.c:41: warning: statement with no effect
+../main.c: In function ‘CountOfLink’:
+../main.c:121: warning: implicit declaration of function ‘FirstSectorCluster’
+../main.c: In function ‘GiveMeDirEntry’:
+../main.c:154: warning: pointer targets in passing argument 1 of ‘strcpy’ differ in signedness
+/usr/include/string.h:127: note: expected ‘char * __restrict__’ but argument is of type ‘unsigned char *’
+../main.c:164: warning: function returns address of local variable
+../main.c:245: warning: function returns address of local variable
+../main.c: In function ‘ComparePto’:
+../main.c:251: warning: statement with no effect
+../main.c: In function ‘fat_getattr’:
+../main.c:315: warning: passing argument 1 of ‘GiveMeDirEntry’ discards qualifiers from pointer target type
+../main.c:135: note: expected ‘char *’ but argument is of type ‘const char *’
+../main.c: In function ‘fat_readdir’:
+../main.c:323: warning: passing argument 1 of ‘GiveMeDirEntry’ discards qualifiers from pointer target type
+../main.c:135: note: expected ‘char *’ but argument is of type ‘const char *’
+Finished building: ../main.c
+../main.c:378: warning: pointer targets in passing argument 1 of ‘ComparePto’ differ in signedness
+ 
+../main.c:248: note: expected ‘char *’ but argument is of type ‘unsigned char *’
+Building target: fat32
+../main.c:378: warning: pointer targets in passing argument 1 of ‘ComparePto’ differ in signedness
+Invoking: GCC C Linker
+gcc  -o"fat32"  ./main.o   -lfuse
+../main.c:248: note: expected ‘char *’ but argument is of type ‘unsigned char *’
+../main.c:379: warning: pointer targets in passing argument 2 of ‘filler’ differ in signedness
+../main.c:379: note: expected ‘const char *’ but argument is of type ‘unsigned char *’
+../main.c: In function ‘fat_read’:
+Finished building target: fat32
+../main.c:414: warning: passing argument 1 of ‘GiveMeDirEntry’ discards qualifiers from pointer target type
+ 
+../main.c:135: note: expected ‘char *’ but argument is of type ‘const char *’
+../main.c:444: warning: implicit declaration of function ‘Min’
+../main.c: In function ‘T’:
+../main.c:534: warning: statement with no effect
+../main.c: In function ‘main’:
+../main.c:543: warning: assignment makes pointer from integer without a cast
+../main.c:551: warning: unused variable ‘offset’
+../main.c:550: warning: unused variable ‘buf’
+../main.c:549: warning: unused variable ‘size’
+../main.c:548: warning: unused variable ‘stbuf’

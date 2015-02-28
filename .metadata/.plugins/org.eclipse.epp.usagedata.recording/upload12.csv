@@ -1,0 +1,151 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015985251
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015985723
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015986448
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015986782
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015987304
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293015991062
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293015994520
+activated,editor,org.eclipse.cdt.ui,5.2.0.201006141710,"org.eclipse.cdt.ui.editor.CEditor",1293016000120
+activated,view,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.DebugView",1293016011598
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.Terminate",1293016011643
+activated,editor,org.eclipse.cdt.ui,5.2.0.201006141710,"org.eclipse.cdt.ui.editor.CEditor",1293016013413
+activated,perspective,org.eclipse.cdt.ui,5.2.0.201006141710,"org.eclipse.cdt.ui.CPerspective",1293016016754
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.text.contentAssist.proposals",1293016307686
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1293016317232
+executed,command,org.eclipse.ui.ide,3.6.0.I20100601-0800,"org.eclipse.ui.project.buildAll",1293016317721
+started,bundle,org.eclipse.compare,3.5.100.I20100526-0800,"org.eclipse.compare",1293016341945
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.cut",1293016364690
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.paste",1293016366361
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.cut",1293016370066
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.edit.paste",1293016372569
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1293016374738
+executed,command,org.eclipse.ui.ide,3.6.0.I20100601-0800,"org.eclipse.ui.project.buildAll",1293016375437
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1293016381746
+executed,command,org.eclipse.ui.ide,3.6.0.I20100601-0800,"org.eclipse.ui.project.buildAll",1293016382258
+executed,command,org.eclipse.ui,3.6.0.I20100603-1100,"org.eclipse.ui.file.save",1293016391704
+executed,command,org.eclipse.ui.ide,3.6.0.I20100601-0800,"org.eclipse.ui.project.buildAll",1293016392478
+closed,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016419072
+closed,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016419595
+closed,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016420086
+closed,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016421128
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1293016524527
+activated,perspective,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.DebugPerspective",1293016526079
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1293016526134
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016530650
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016530931
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016531098
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016531286
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016531537
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016532236
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016532412
+activated,view,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.DebugView",1293016536183
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.Terminate",1293016536211
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1293016538804
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1293016541659
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016545999
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016546199
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016546324
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016546467
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016546621
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016547152
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016547404
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016549592
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016550188
+opened,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016550228
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016550890
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016551370
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016552739
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016553111
+opened,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016553153
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016553689
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016554661
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016554957
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016555314
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016556925
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016557347
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016557922
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016559446
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016559728
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016560674
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016563081
+activated,view,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.ExpressionView",1293016565881
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016573832
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016574848
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016583903
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016631037
+activated,editor,org.eclipse.cdt.ui,5.2.0.201006141710,"org.eclipse.cdt.ui.editor.CEditor",1293016650728
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016653880
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016654684
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016662396
+activated,view,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.ExpressionView",1293016666618
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016697535
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016697926
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016699309
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016700388
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016701549
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016705543
+opened,editor,org.eclipse.cdt.debug.ui,7.0.0.201006141710,"org.eclipse.cdt.debug.ui.SourceNotFoundEditor",1293016705564
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016707379
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@109d1): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016707381
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016708231
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@11232f7): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016708233
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016709244
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1c79bc6): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016709245
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016709576
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@d67096): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016709577
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016709819
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@d5be57): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016709820
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016710044
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1cf7ca4): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016710044
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016710241
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1aca93c): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016710243
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016710441
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@9efb20): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016710442
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016710609
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@8b05ea): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016710610
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016710832
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1424965): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016710834
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016711045
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@152ca2d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711046
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016711175
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1345754): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711176
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016711293
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@110aa5c): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711294
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016711396
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1de9c0): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711397
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016711506
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@6f87e6): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711508
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016711595
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016711694
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@647cd9): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711696
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016711770
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016711873
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@189d589): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016711874
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016711954
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712124
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1e4e940): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712125
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712265
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@566f3e): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712267
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016712363
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712433
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@19981fb): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712434
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016712528
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712597
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1bcb385): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712598
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016712708
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@3f2aba): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712709
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712772
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016712919
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@12da9de): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016712920
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016713096
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1184780): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-next 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016713098
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016713199
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@103bdb): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016713200
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016713253
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016713365
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@df4a47): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016713366
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016713449
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepInto",1293016713578
+error,log,,,"Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@1426ed1): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:\n-exec-step 1\nError message from debugger back end:\nNo se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual java.lang.Exception: No se pueden encontrar l\\303\\255mites en la funci\\303\\263n actual' resulted in an error.",1293016713579
+executed,command,org.eclipse.debug.ui,3.6.0.v20100601-1530,"org.eclipse.debug.ui.commands.StepOver",1293016713657
